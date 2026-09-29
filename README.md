@@ -1,59 +1,106 @@
-# TodoApp
+# Todo App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.8.
+A simple Angular todo application for creating, tracking, and managing daily tasks. The app supports adding a task title and due time, marking tasks as complete, and deleting tasks from the list.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- Add a new task with a title and optional due time
+- Mark tasks as complete or incomplete
+- Delete tasks from the list
+- View an empty-state message when no tasks exist
+- Built with Angular 22 and TypeScript
 
-```bash
-ng serve
-```
+## Tech Stack
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Angular 22
+- TypeScript
+- RxJS
+- SCSS
+- npm
 
-## Code scaffolding
+## Prerequisites
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Before running this project, make sure you have the following installed:
 
-```bash
-ng generate component component-name
-```
+- Node.js 20 or later
+- npm 10 or later
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## Installation
 
 ```bash
-ng build
+git clone <your-repository-url>
+cd todo-app
+npm install
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Run the app
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Start the development server:
 
 ```bash
-ng test
+npm start
 ```
 
-## Running end-to-end tests
+Then open your browser at:
 
-For end-to-end (e2e) testing, run:
+```text
+http://localhost:4200/
+```
+
+The app will automatically reload when you change source files.
+
+## Build for production
+
+Create a production build:
 
 ```bash
-ng e2e
+npm run build
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+The compiled files are generated in the `dist/` directory.
 
-## Additional Resources
+## Run tests
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm test
+```
+
+## Project structure
+
+```text
+todo-app/
+├── src/
+│   ├── app/
+│   │   ├── app.html
+│   │   ├── app.scss
+│   │   ├── app.ts
+│   │   └── app.spec.ts
+│   ├── main.ts
+│   ├── styles.scss
+│   └── index.html
+├── angular.json
+├── package.json
+├── tsconfig.json
+├── tsconfig.app.json
+├── tsconfig.spec.json
+├── README.md
+└── public/
+```
+
+## Credits
+
+Built and maintained by [Yunus-Rana](https://github.com/Yunus-Rana/).
+
+## License
+
+This project is available for learning and personal use.
+
+## Notes
+
+This app is intentionally lightweight and is a good starting point for expanding into features like:
+
+- task editing
+- localStorage persistence
+- filtering by status
+- categories and priority labels
+- drag-and-drop organization
