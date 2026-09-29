@@ -1,0 +1,201 @@
+// Color Palette Mapping
+$navy-dark:   #1b2845; // Deepest navy (text, strong borders, dark accents)
+$slate-blue:  #274060; // Dark slate blue (headings, container border)
+$steel-blue:  #335c81; // Muted steel blue (indices, secondary text, hover)
+$blue-accent: #5899e2; // Primary accent (buttons, focus borders, checkboxes)
+$sky-light:   #65afff; // Highlight / badge color
+
+// Destructive Action Colors
+$danger:      #dc2626;
+$danger-dark: #b91c1c;
+
+:host {
+  display: block;
+  max-width: 550px;
+  margin: 40px auto;
+  padding: 28px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: $navy-dark;
+  background-color: #ffffff;
+  border-radius: 14px;
+  border: 1px solid rgba($slate-blue, 0.15);
+  box-shadow: 0 10px 30px rgba($navy-dark, 0.08);
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+  color: $slate-blue;
+  letter-spacing: -0.5px;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+
+  input[type="text"],
+  input[type="time"] {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    color: $navy-dark;
+    background-color: #ffffff;
+    border: 1.5px solid rgba($steel-blue, 0.25);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+
+    &::placeholder {
+      color: rgba($steel-blue, 0.6);
+    }
+
+    &:focus {
+      border-color: $blue-accent;
+      box-shadow: 0 0 0 3px rgba($blue-accent, 0.15);
+    }
+  }
+
+  input[type="text"] {
+    flex: 1;
+  }
+
+  input[type="time"] {
+    cursor: pointer;
+  }
+
+  button {
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: $steel-blue;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: $slate-blue;
+    }
+
+    &:active {
+      transform: scale(0.98);
+      background-color: $navy-dark;
+    }
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-list {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background-color: rgba($sky-light, 0.05);
+  border: 1px solid rgba($steel-blue, 0.18);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: rgba($blue-accent, 0.5);
+    background-color: rgba($sky-light, 0.08);
+  }
+
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: $blue-accent;
+  }
+
+  .index {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: $steel-blue;
+    min-width: 18px;
+  }
+
+  .title {
+    flex: 1;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: $navy-dark;
+    word-break: break-word;
+    transition: color 0.2s;
+  }
+
+  .due-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: $blue-accent;
+    padding: 3px 9px;
+    border-radius: 12px;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+
+  .actions {
+    margin-left: auto;
+
+    button {
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: $navy-dark;
+      background-color: rgba($sky-light, 0.15);
+      border: 1px solid rgba($steel-blue, 0.25);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s, border-color 0.2s, color 0.2s, transform 0.1s;
+
+      &:hover {
+        background-color: $danger;
+        border-color: $danger;
+        color: #ffffff;
+      }
+
+      &:active {
+        background-color: $danger-dark;
+        border-color: $danger-dark;
+        transform: scale(0.96);
+      }
+    }
+  }
+
+  &.is-done {
+    opacity: 0.55;
+    background-color: rgba($navy-dark, 0.03);
+    border-color: rgba($steel-blue, 0.1);
+
+    .title {
+      text-decoration: line-through;
+      color: $steel-blue;
+    }
+
+    .due-badge {
+      background-color: rgba($steel-blue, 0.35);
+      color: #ffffff;
+    }
+  }
+}
+
+ul + span,
+span:only-child {
+  display: block;
+  text-align: center;
+  padding: 32px 0;
+  color: $steel-blue;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
